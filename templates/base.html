@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block head %}
+  <title>{% block title %}HTTP Waifus{% endblock %}</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/static/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" type="text/css" href="/static/style.css" />
+  {% endblock %}
+</head>
+
+<body>
+  <nav class="navbar w3-bar w3-card w3-top">
+    {% block navbar %}
+    <a href="/about" class="w3-bar-item w3-button">
+      <span class="icon"><i class="fa fa-home"></i></span>
+      Waifus
+    </a>
+    <a href="/add" class="w3-bar-item w3-button">
+      <span class="icon"><i class="fa fa-plus"></i></span>
+      Add
+    </a>
+    <a href="/docs" class="w3-bar-item w3-button">
+      <span class="icon"><i class="fa fa-code"></i></span>
+      API
+    </a>
+    <a href="https://github.com/LemonPi314/http-waifus" class="w3-bar-item w3-button">
+      <span class="icon"><i class="fa fa-github"></i></span>
+      GitHub
+    </a>
+    {% endblock %}
+  </nav>
+
+  <div id="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+  <footer>
+    {% block footer %}
+    <p>
+      Made with
+      <a href="https://python.org/">Python</a>
+      and a keyboard
+      <br />
+      Powered by
+      <a href="https://fastapi.tiangolo.com/">FastAPI</a>
+      and long sleepless nights
+    </p>
+    {% endblock %}
+  </footer>
+
+  {% block scripts %}
+  <script src="/static/script.js"></script>
+  {% endblock %}
+</body>
+
+</html>

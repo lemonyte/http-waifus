@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>HTTP Waifus</h1>
+<p class="subtitle">
+  Waifus for every HyperText Transfer Protocol response status code.
+</p>
+<div class="search"></div>
+<div class="image-cards">
+  {% for status_code in status_codes %}
+  <div class="image-card w3-card">
+    <div class="image">
+      <img src="/api/{{ status_code }}" />
+    </div>
+    <div class="status-code"><span>{{ status_code }}</span></div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
