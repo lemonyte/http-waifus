@@ -22,7 +22,7 @@ footer {
   /* FIXME: magic numbers */
   min-height: calc(100vh - 50px - 95px);
   height: fit-content;
-  margin: 50px 15vw 0px 15vw;
+  margin: 50px 10vw 0px 10vw;
 }
 
 .subtitle {

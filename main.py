@@ -24,16 +24,17 @@ async def new(request: Request):
     )
 
 
-@app.get('/add', response_class=HTMLResponse)
-async def add(request: Request):
-    return templates.TemplateResponse('add.html', {'request': request})
+@app.get('/upload', response_class=HTMLResponse)
+async def upload(request: Request):
+    return templates.TemplateResponse('upload.html', {'request': request})
 
 
 @app.get('/api/{status_code}', response_class=Response)
 async def api_get(status_code: int):
-    if status_code not in image_drive.list()['names']:
+    filename = f'{status_code}.png'
+    if filename not in image_drive.list()['names']:
         raise HTTPException(status_code=404)
-    image = image_drive.get(f'{status_code}.png').read()
+    image = image_drive.get(filename).read()
     return Response(image, media_type='image/png')
 
 

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Upload Image</h1>
+<input id="file" type="file">
+<input id="status-code" type="number">
+<button id="upload-button" onclick="upload();">Upload</button>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/script.js"></script>
+{% endblock %}
