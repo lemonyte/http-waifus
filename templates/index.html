@@ -10,7 +10,7 @@
   <h3>Usage</h3>
   <code>https://httpwaifus.deta.dev/api/{code}</code>
   <p>
-    Replace {code} with a status code.
+    Replace <code>{code}</code> with a status code.
   </p>
 </div>
 <div class="image-cards">
@@ -19,7 +19,10 @@
     <div class="image">
       <img src="/api/{{ status_code }}" />
     </div>
-    <div class="status-code"><span>{{ status_code }}</span></div>
+    <div class="status">
+      <span class="status-code">{{ status_code }}</span><br>
+      <span class="status-detail">{{ status_info[status_code] }}</span>
+    </div>
   </div>
   {% endfor %}
 </div>
