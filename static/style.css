@@ -19,6 +19,7 @@ footer {
   text-align: center;
   display: flex;
   flex-flow: column nowrap;
+  align-items: center;
   /* FIXME: magic numbers */
   min-height: calc(100vh - 50px - 95px);
   height: fit-content;
@@ -73,8 +74,17 @@ footer {
   object-fit: cover;
 }
 
+.image-card .status {
+  display: flex;
+  flex-direction: column;
+}
+
 .image-card .status-code {
-  margin-bottom: 3px;
   font-size: 20px;
   font-weight: bold;
+  font-family: monospace;
+}
+
+.image-card .status-detail {
+  margin-bottom: 5px;
 }
