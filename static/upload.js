@@ -13,24 +13,19 @@ async function upload() {
   const uploadButton = document.getElementById("upload-button");
   uploadButton.disabled = true;
   await render();
-  fetch(document.getElementById("rendered-image").src)
-    .then((res) => {
-      return res.arrayBuffer();
-    })
-    .then((buf) => {
-      const filename = `${statusCode}.jpeg`;
-      const file = new File([buf], filename, {
-        type: "image/jpeg",
-      });
-      const formData = new FormData();
-      formData.append("file", file, filename);
-      fetch(`/api/${statusCode}`, {
-        method: "POST",
-        body: formData,
-      }).then(() => {
-        uploadButton.disabled = false;
-      });
-    });
+  const imageResponse = await fetch(document.getElementById("rendered-image").src);
+  const buffer = await imageResponse.arrayBuffer();
+  const filename = `${statusCode}.jpeg`;
+  const file = new File([buffer], filename, {
+    type: "image/jpeg",
+  });
+  const formData = new FormData();
+  formData.append("file", file, filename);
+  await fetch(`/api/${statusCode}`, {
+    method: "POST",
+    body: formData,
+  });
+  uploadButton.disabled = false;
 }
 
 const fileInput = document.getElementById("file");
