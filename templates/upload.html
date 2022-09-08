@@ -3,10 +3,63 @@
 {% block content %}
 <h1>Upload Image</h1>
 <input id="file" type="file">
-<input id="status-code" type="number">
 <button id="upload-button" onclick="upload();">Upload</button>
+<button onclick="render();">Render</button>
+<h2>Preview</h2>
+<div id="render-content">
+  <style>
+    #image-content {
+      width: 800px;
+      height: 700px;
+      color: white;
+      background-color: black;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      padding-bottom: 0;
+    }
+
+    #inner-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .status {
+      margin: 10px;
+      margin-top: 5px;
+      display: flex;
+      flex-direction: column;
+      font-family: monospace;
+    }
+
+    .status-code {
+      font-size: 60px;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    .status-detail {
+      font-size: 20px;
+    }
+  </style>
+  <div id="image-content">
+    <img id="inner-image" src="/static/img/418.png" />
+    <div class="status">
+      <span id="status-code" class="status-code" contenteditable="true">418</span>
+      <span class="status-detail" contenteditable="true">I'm a Teapot</span>
+    </div>
+  </div>
+</div>
+<!-- <div id="output" style="display: none;"> -->
+<div id="output">
+  <img id="rendered-image" />
+</div>
 {% endblock %}
 
 {% block scripts %}
-<script src="/static/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+<script src="/static/upload.js"></script>
 {% endblock %}
