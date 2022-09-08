@@ -16,13 +16,7 @@
 <div class="image-cards">
   {% for status_code in status_codes %}
   <div class="image-card w3-card">
-    <div class="image">
-      <img src="/api/{{ status_code }}" />
-    </div>
-    <div class="status">
-      <span class="status-code">{{ status_code }}</span><br>
-      <span class="status-detail">{{ status_info[status_code] }}</span>
-    </div>
+    <img src="/api/{{ status_code }}" onclick="window.open(this.src)" />
   </div>
   {% endfor %}
 </div>

@@ -1,5 +1,4 @@
 import os
-from http import HTTPStatus
 
 from deta import Deta
 from fastapi import FastAPI, Request, HTTPException, UploadFile, Header
@@ -16,18 +15,6 @@ image_drive = deta.Drive('images')
 image_format = 'jpeg'
 
 
-def status_info() -> dict:
-    statuses = {}
-    for code in range(100, 600):
-        try:
-            status = HTTPStatus(code)
-            statuses[code] = status.phrase
-        except ValueError:
-            pass
-    statuses[420] = "Enhance Your Calm"
-    return statuses
-
-
 @app.get('/', response_class=HTMLResponse)
 async def new(request: Request):
     return templates.TemplateResponse(
@@ -35,7 +22,6 @@ async def new(request: Request):
         {
             'request': request,
             'status_codes': [int(code.strip(f'.{image_format}')) for code in image_drive.list()['names']],
-            'status_info': status_info(),
         },
     )
 
