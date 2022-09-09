@@ -12,6 +12,7 @@ templates = Jinja2Templates(directory='templates')
 token = os.getenv('DETA_PROJECT_KEY')
 deta = Deta(token)
 image_drive = deta.Drive('images')
+image_drive_raw = deta.Drive('images-raw')
 image_format = 'jpeg'
 
 
@@ -47,8 +48,7 @@ async def api_post(status_code: int, file: UploadFile, authorization: str = Head
     filename = f'{status_code}.{image_format}'
     if filename in image_drive.list()['names']:
         raise HTTPException(status_code=409)
-    content = await file.read()
-    image_drive.put(filename, content)
+    image_drive.put(filename, await file.read())
 
 
 @app.delete('/api/{status_code}')
@@ -59,6 +59,35 @@ async def api_delete(status_code: int, authorization: str = Header(default='')):
     if filename in image_drive.list()['names']:
         raise HTTPException(status_code=409)
     image_drive.delete(filename)
+
+
+@app.get('/api/raw/{status_code}', response_class=Response)
+async def api_raw_get(status_code: int):
+    filename = f'{status_code}.{image_format}'
+    if filename not in image_drive_raw.list()['names']:
+        raise HTTPException(status_code=404)
+    image = image_drive_raw.get(filename).read()
+    return Response(image, media_type=f'image/{image_format}')
+
+
+@app.post('/api/raw/{status_code}')
+async def api_raw_post(status_code: int, file: UploadFile, authorization: str = Header(default='')):
+    # if authorization != token:
+    #     raise HTTPException(status_code=401)
+    filename = f'{status_code}.{image_format}'
+    if filename in image_drive_raw.list()['names']:
+        raise HTTPException(status_code=409)
+    image_drive_raw.put(filename, await file.read())
+
+
+@app.delete('/api/raw/{status_code}')
+async def api_raw_delete(status_code: int, authorization: str = Header(default='')):
+    # if authorization != token:
+    #     raise HTTPException(status_code=401)
+    filename = f'{status_code}.{image_format}'
+    if filename in image_drive_raw.list()['names']:
+        raise HTTPException(status_code=409)
+    image_drive_raw.delete(filename)
 
 
 @app.exception_handler(404)

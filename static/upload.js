@@ -30,7 +30,26 @@ async function upload() {
     method: "POST",
     body: formData,
   });
+  await uploadRaw();
   uploadButton.disabled = false;
+}
+
+async function uploadRaw() {
+  const statusCode = parseInt(document.getElementById("status-code").innerText);
+  if (!statusCode) {
+    return;
+  }
+  const file = document.getElementById("file").files[0];
+  if (!file) {
+    return;
+  }
+  const filename = `${statusCode}.jpeg`;
+  const formData = new FormData();
+  formData.append("file", file, filename);
+  await fetch(`/api/raw/${statusCode}`, {
+    method: "POST",
+    body: formData,
+  });
 }
 
 document.getElementById("file").addEventListener("change", (e) => {
