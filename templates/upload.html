@@ -24,7 +24,10 @@
     #inner-image {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      background-image: url("/api/raw/418");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
     .status {
@@ -46,14 +49,14 @@
     }
   </style>
   <div id="image-content">
-    <img id="inner-image" src="/static/img/418.png" />
+    <div id="inner-image"></div>
     <div class="status">
       <span id="status-code" class="status-code" contenteditable="true">418</span>
       <span class="status-detail" contenteditable="true">I'm a Teapot</span>
     </div>
   </div>
 </div>
-<!-- <div id="output" style="display: none;"> -->
+<hr>
 <div id="output">
   <img id="rendered-image" />
 </div>
