@@ -19,7 +19,7 @@ footer {
   /* FIXME: magic numbers */
   min-height: calc(100vh - 50px - 95px);
   height: fit-content;
-  margin: 50px 10vw 0px 10vw;
+  margin: 50px 5vw 0px 5vw;
 }
 
 .subtitle {
@@ -34,11 +34,10 @@ footer {
 
 .navbar {
   color: #ffffff;
-  background-color: #ff6404;
+  background-color: #c80e3d;
 }
 
 .image-cards {
-  margin: 50px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
