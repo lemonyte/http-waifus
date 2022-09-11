@@ -16,6 +16,7 @@
 <div class="image-cards">
   {% for status_code in status_codes %}
   <div class="image-card w3-card">
+    <!-- FIXME: proper image link instead of window.open() -->
     <img src="/api/{{ status_code }}" onclick="window.open(this.src)" />
   </div>
   {% endfor %}

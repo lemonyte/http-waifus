@@ -9,8 +9,8 @@ from fastapi.templating import Jinja2Templates
 app = FastAPI()
 app.mount('/static', StaticFiles(directory='static'), name='static')
 templates = Jinja2Templates(directory='templates')
-token = os.getenv('DETA_PROJECT_KEY')
-deta = Deta(token)
+project_key = os.getenv('DETA_PROJECT_KEY')
+deta = Deta()
 image_drive = deta.Drive('images')
 image_drive_raw = deta.Drive('images-raw')
 image_format = 'jpeg'
@@ -43,7 +43,7 @@ async def api_get(status_code: int):
 
 @app.post('/api/{status_code}')
 async def api_post(status_code: int, file: UploadFile, authorization: str = Header(default='')):
-    # if authorization != token:
+    # if authorization != project_key:
     #     raise HTTPException(status_code=401)
     filename = f'{status_code}.{image_format}'
     if filename in image_drive.list()['names']:
@@ -53,7 +53,7 @@ async def api_post(status_code: int, file: UploadFile, authorization: str = Head
 
 @app.delete('/api/{status_code}')
 async def api_delete(status_code: int, authorization: str = Header(default='')):
-    # if authorization != token:
+    # if authorization != project_key:
     #     raise HTTPException(status_code=401)
     filename = f'{status_code}.{image_format}'
     if filename in image_drive.list()['names']:
@@ -72,7 +72,7 @@ async def api_raw_get(status_code: int):
 
 @app.post('/api/raw/{status_code}')
 async def api_raw_post(status_code: int, file: UploadFile, authorization: str = Header(default='')):
-    # if authorization != token:
+    # if authorization != project_key:
     #     raise HTTPException(status_code=401)
     filename = f'{status_code}.{image_format}'
     if filename in image_drive_raw.list()['names']:
@@ -82,7 +82,7 @@ async def api_raw_post(status_code: int, file: UploadFile, authorization: str = 
 
 @app.delete('/api/raw/{status_code}')
 async def api_raw_delete(status_code: int, authorization: str = Header(default='')):
-    # if authorization != token:
+    # if authorization != project_key:
     #     raise HTTPException(status_code=401)
     filename = f'{status_code}.{image_format}'
     if filename in image_drive_raw.list()['names']:
