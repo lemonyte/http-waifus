@@ -7,7 +7,7 @@
 </p>
 <div class="search"></div>
 <div>
-  <h3>Usage</h3>
+  <h2>Usage</h2>
   <code>https://httpwaifus.deta.dev/api/{code}</code>
   <p>
     Replace <code>{code}</code> with a status code.
@@ -17,7 +17,7 @@
   {% for status_code in status_codes %}
   <div class="image-card w3-card">
     <!-- FIXME: proper image link instead of window.open() -->
-    <img src="/api/{{ status_code }}" onclick="window.open(this.src)" />
+    <img src="/api/{{ status_code }}" alt="{{ status_code }}" onclick="window.open(this.src)" />
   </div>
   {% endfor %}
 </div>
