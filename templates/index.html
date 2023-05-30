@@ -8,7 +8,7 @@
 <div class="search"></div>
 <div>
   <h2>Usage</h2>
-  <code>https://httpwaifus.deta.dev/api/{code}</code>
+  <code id="url">/api/{code}</code>
   <p>
     Replace <code>{code}</code> with a status code.
   </p>
@@ -21,4 +21,10 @@
   </div>
   {% endfor %}
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.getElementById("url").textContent = window.location.href + "api/{code}";
+</script>
 {% endblock %}
