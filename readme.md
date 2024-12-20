@@ -7,6 +7,11 @@ Waifus for every HyperText Transfer Protocol response [status code](https://deve
 HTTP Waifus is a collection of cute and funny anime images that more-or-less represent various HTTP status codes, inspired by the likes of [HTTP Cats](https://httpcats.com) and [HTTP Dogs](https://httpstatusdogs.com).
 You can browse the images, or add some fun to your own site with the API, because even developers need some fun (and waifus?) in their lives 😝.
 
+> [!IMPORTANT]
+> **Help wanted!**  
+> The collection is currently unfinished, and I need ***your*** help to complete it!
+> If you have an anime image in mind that you think represents an HTTP [status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status), please [open an issue](https://github.com/lemonyte/http-waifus/issues) to discuss it!
+
 ## Usage
 
 Embed an image using the base URL `https://httpwaifus.com/{status_code}.jpeg`
