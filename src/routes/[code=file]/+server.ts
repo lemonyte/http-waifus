@@ -10,7 +10,7 @@ export const GET = (async ({ platform, url }) => {
     }
     return new Response(obj.body, {
         headers: {
-            "Content-Type": obj.httpMetadata?.contentType || "image/png",
+            "Content-Type": obj.httpMetadata?.contentType || "image/jpeg",
             "Cache-Control": "max-age=604800",
         },
     });
