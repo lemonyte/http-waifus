@@ -15,7 +15,14 @@
 <div class="flex flex-row flex-wrap gap-4 justify-center">
     {#each Object.entries(STATUS_CODES) as [code, description]}
         <a href={`/${code}`}>
-            <img src={`/${code}.jpeg`} alt="{code} {description}" width="800" height="700" class="w-full h-64" loading="lazy"/>
+            <img
+                src={`/${code}.jpeg`}
+                alt="{code} {description}"
+                width="800"
+                height="700"
+                class="w-full h-64"
+                loading="lazy"
+            />
         </a>
     {/each}
 </div>
