@@ -1,0 +1,15 @@
+export const STATUS_CODES = {
+    102: "Processing",
+    200: "OK",
+    300: "Multiple Choices",
+    307: "Temporary Redirect",
+    400: "Bad Request",
+    402: "Payment Required",
+    404: "Not Found",
+    405: "Method Not Allowed",
+    418: "I'm a teapot",
+    420: "Enhance Your Calm",
+    451: "Unavailable For Legal Reasons",
+    500: "Internal Server Error",
+    508: "Loop Detected",
+};

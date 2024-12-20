@@ -1,0 +1,29 @@
+{
+  "name": "http-waifus",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "npm run build && wrangler pages dev",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "deploy": "npm run build && wrangler pages deploy",
+    "cf-typegen": "wrangler types && move worker-configuration.d.ts src/"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241218.0",
+    "@sveltejs/adapter-auto": "^3.0.0",
+    "@sveltejs/adapter-cloudflare": "^4.9.0",
+    "@sveltejs/kit": "^2.9.0",
+    "@sveltejs/vite-plugin-svelte": "^5.0.0",
+    "autoprefixer": "^10.4.20",
+    "svelte": "^5.0.0",
+    "svelte-check": "^4.0.0",
+    "tailwindcss": "^3.4.9",
+    "typescript": "^5.0.0",
+    "vite": "^6.0.0",
+    "wrangler": "^3.99.0"
+  }
+}
