@@ -5,7 +5,7 @@
 
 <div class="flex flex-col items-center p-8">
     <a href="/" class="transition-all text-black dark:text-white hover:text-pink-400 dark:hover:text-pink-300">
-        <h1 class="text-5xl font-bold my-6">HTTP Waifus</h1>
+        <h1 class="text-5xl font-bold mb-5">HTTP Waifus</h1>
     </a>
     {@render children()}
 </div>
