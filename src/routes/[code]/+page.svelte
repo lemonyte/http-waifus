@@ -9,15 +9,20 @@
     const image = {
         src: `/${code}.jpeg`,
         alt: `${code} ${description}`,
+        width: 800,
+        height: 700,
     };
 </script>
 
 <div class="flex flex-row gap-32">
-    <img src={image.src} alt={image.alt} class="w-1/2 object-contain" />
+    <div class="w-1/2 flex-col justify-center hidden lg:flex">
+        <img src={image.src} alt={image.alt} width={image.width} height={image.height} class="w-full object-contain rounded-xl" />
+    </div>
     <div class="text-lg flex-1">
-        <h1 class="text-9xl font-bold">{code}</h1>
-        <p class="text-4xl mb-8 text-pink-400 dark:text-pink-300">{description}</p>
-        <div class="flex flex-col gap-8">
+        <img src={image.src} alt={image.alt} width={image.width} height={image.height} class="w-full object-contain rounded-xl lg:hidden" />
+        <h1 class="text-9xl font-bold hidden lg:block">{code}</h1>
+        <p class="text-4xl text-pink-400 dark:text-pink-300 hidden lg:block">{description}</p>
+        <div class="flex flex-col gap-8 mt-8">
             <div class="link-display">
                 <span>Link to image</span>
                 <code>{page.url.origin}{image.src}</code>
@@ -28,7 +33,7 @@
             </div>
             <div class="link-display">
                 Embed this image in your website
-                <code>&lt;img src="{page.url.origin}{image.src}" alt="{image.alt}" /&gt;</code>
+                <code>&lt;img src="{page.url.origin}{image.src}" alt="{image.alt}" width="{image.width}" height="{image.height}" /&gt;</code>
             </div>
             <div>
                 <span>MDN Reference: </span>
