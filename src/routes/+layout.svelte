@@ -10,7 +10,7 @@
             have an image to add, please open an issue on <a href="https://github.com/lemonyte/http-waifus">GitHub</a> &#10084;
         </p>
     </div>
-    <div class="flex flex-col items-center p-8 flex-grow">
+    <div class="flex flex-col items-center p-8 grow">
         <a href="/" class="transition-all text-black dark:text-white hover:text-pink-400 dark:hover:text-pink-300">
             <h1 class="text-5xl font-bold mb-5">HTTP Waifus</h1>
         </a>
@@ -27,13 +27,3 @@
         <p><a href="https://github.com/lemonyte/http-waifus">Open-source</a> and tracker-free</p>
     </footer>
 </div>
-
-<style lang="postcss">
-    :global(a) {
-        @apply transition-all text-pink-400 dark:text-pink-300 hover:text-pink-600 dark:hover:text-pink-500;
-    }
-
-    :global(code) {
-        @apply bg-neutral-950 text-neutral-200 rounded-lg p-1;
-    }
-</style>

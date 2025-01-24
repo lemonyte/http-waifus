@@ -1,3 +1,15 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
+
+:root {
+    @apply bg-white dark:bg-neutral-900 text-black dark:text-white min-h-screen;
+}
+
+@layer base {
+    a {
+        @apply transition-all text-pink-400 dark:text-pink-300 hover:text-pink-600 dark:hover:text-pink-500;
+    }
+
+    code {
+        @apply bg-neutral-950 text-neutral-200 rounded-lg p-1;
+    }
+}
