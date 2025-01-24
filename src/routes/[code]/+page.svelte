@@ -1,7 +1,7 @@
 <script lang="ts">
     import { page } from "$app/state";
-    import type { PageData } from "./$types";
     import { STATUS_CODES } from "$lib/codes";
+    import type { PageData } from "./$types";
 
     let { data }: { data: PageData } = $props();
     const code = data.code;
