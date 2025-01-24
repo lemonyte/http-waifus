@@ -3,7 +3,7 @@
     import { STATUS_CODES } from "$lib/codes";
 </script>
 
-<p class="text-center text-neutral-600 dark:text-neutral-400 text-lg font-bold mb-4">
+<p class="text-center text-neutral-600 dark:text-neutral-400 text-lg font-semibold mb-4">
     Waifus for every HyperText Transfer Protocol response status code
 </p>
 <div class="w-full my-4 mx-8 px-6 flex flex-col">
