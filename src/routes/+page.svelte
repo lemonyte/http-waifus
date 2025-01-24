@@ -8,8 +8,8 @@
 </p>
 <div class="w-full my-4 mx-8 px-6 flex flex-col">
     <span class="text-lg">API usage:</span>
-    <code id="api-url" class="p-4 my-2">{page.url.origin}/&lbrace;code&rbrace;.jpeg</code>
-    <span>Replace <code>&lbrace;code&rbrace;</code> with a status code.</span>
+    <code id="api-url" class="p-4 my-2">{page.url.origin}/{"{code}.jpeg"}</code>
+    <span>Replace <code>{"{code}"}</code> with a status code.</span>
 </div>
 
 <div class="flex flex-row flex-wrap gap-4 justify-center">
