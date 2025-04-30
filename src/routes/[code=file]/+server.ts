@@ -1,10 +1,10 @@
 import type { RequestHandler } from "./$types";
 
-export const GET = (async ({ platform, url }) => {
+export const GET = (async ({ platform, params }) => {
     if (platform === undefined) {
         return new Response("Internal Server Error", { status: 500 });
     }
-    const obj = await platform.env.MEDIA.get(url.pathname.replaceAll("/", ""));
+    const obj = await platform.env.MEDIA.get(params.code);
     if (obj === null) {
         return new Response("Not Found", { status: 404 });
     }
