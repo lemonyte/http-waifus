@@ -4,11 +4,6 @@
     let { children } = $props();
 </script>
 
-<svelte:head>
-    <title>HTTP Waifus</title>
-    <meta name="description" content="Waifus for every HyperText Transfer Protocol response status code" />
-</svelte:head>
-
 <div class="flex flex-col min-h-screen">
     <div class="text-center p-4 bg-neutral-200 dark:bg-neutral-950">
         <p>
@@ -26,7 +21,7 @@
         class="flex flex-col items-center text-center p-4 text-neutral-600 dark:text-neutral-400 bg-neutral-200 dark:bg-neutral-950"
     >
         <p>
-            Made by <a href="https://github.com/lemonyte">Lemonyte</a> using
+            Hand-crafted by <a href="https://lemonyte.com">Lemonyte</a> using
             <a href="https://svelte.dev">SvelteKit</a>,
             <a href="https://pages.dev">Cloudflare</a>, and a keyboard
         </p>

@@ -1,10 +1,10 @@
 <script lang="ts">
     import { page } from "$app/state";
     import { STATUS_CODES } from "$lib/codes";
-    import type { PageData } from "./$types";
+    import { baseUrl, siteName } from "$lib/config";
 
-    let { data }: { data: PageData } = $props();
-    const code = data.code;
+    const { data } = $props();
+    const { code } = data;
     const description = STATUS_CODES[code as keyof typeof STATUS_CODES];
     const image = {
         src: `/${code}.jpeg`,
@@ -13,6 +13,18 @@
         height: 700,
     };
 </script>
+
+<svelte:head>
+    <title>{code} {description} | {siteName}</title>
+    <link rel="canonical" href={new URL(`/${code}`, baseUrl).href} />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={`${code} ${description} | ${siteName}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={new URL(`/${code}`, baseUrl).href} />
+    <meta property="og:image" content={new URL(`/${code}.jpeg`, baseUrl).href} />
+    <meta property="og:site_name" content={siteName} />
+</svelte:head>
 
 {#snippet linkDisplay(text: string, code: string)}
     <div class="flex flex-col">
@@ -40,7 +52,7 @@
             class="w-full object-contain rounded-xl lg:hidden"
         />
         <h1 class="text-9xl font-bold hidden lg:block">{code}</h1>
-        <p class="text-4xl text-pink-400 dark:text-pink-300 hidden lg:block">{description}</p>
+        <p class="text-4xl font-semibold text-pink-400 dark:text-pink-300 hidden lg:block">{description}</p>
         <div class="flex flex-col gap-8 mt-8">
             {@render linkDisplay("Link to image", page.url.origin + image.src)}
             {@render linkDisplay("Link to this page", `${page.url.origin}/${code}`)}

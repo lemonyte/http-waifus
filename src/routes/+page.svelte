@@ -1,7 +1,20 @@
 <script lang="ts">
     import { page } from "$app/state";
     import { STATUS_CODES } from "$lib/codes";
+    import { baseUrl, description, siteName } from "$lib/config";
 </script>
+
+<svelte:head>
+    <title>{siteName}</title>
+    <link rel="canonical" href={baseUrl} />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={siteName} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={baseUrl} />
+    <meta property="og:image" content={new URL("/418.jpeg", baseUrl).href} />
+    <meta property="og:site_name" content={siteName} />
+</svelte:head>
 
 <p class="text-center text-neutral-600 dark:text-neutral-400 text-lg font-semibold mb-4">
     Waifus for every HyperText Transfer Protocol response status code
