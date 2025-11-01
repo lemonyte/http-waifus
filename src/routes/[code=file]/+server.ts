@@ -1,6 +1,4 @@
-import type { RequestHandler } from "./$types";
-
-export const GET = (async ({ platform, params }) => {
+export const GET = async ({ platform, params }) => {
     if (platform === undefined) {
         return new Response("Internal Server Error", { status: 500 });
     }
@@ -14,4 +12,4 @@ export const GET = (async ({ platform, params }) => {
             "Cache-Control": "max-age=604800",
         },
     });
-}) satisfies RequestHandler;
+};
