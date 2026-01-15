@@ -5,7 +5,7 @@ updates:
     schedule:
       interval: "monthly"
     groups:
-      bump:
+      minor:
         update-types:
           - "minor"
           - "patch"
@@ -14,3 +14,9 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+    groups:
+      actions:
+        update-types:
+          - "major"
+          - "minor"
+          - "patch"
