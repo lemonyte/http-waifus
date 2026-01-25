@@ -4,14 +4,14 @@
     import { baseUrl, siteName } from "$lib/config";
 
     const { data } = $props();
-    const { code } = data;
-    const description = STATUS_CODES[code as keyof typeof STATUS_CODES];
-    const image = {
+    const { code } = $derived(data);
+    const description = $derived(STATUS_CODES[code as keyof typeof STATUS_CODES]);
+    const image = $derived({
         src: `/${code}.jpeg`,
         alt: `${code} ${description}`,
         width: 800,
         height: 700,
-    };
+    });
 </script>
 
 <svelte:head>
