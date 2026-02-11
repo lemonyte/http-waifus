@@ -25,6 +25,6 @@
             <a href="https://svelte.dev">SvelteKit</a>,
             <a href="https://pages.dev">Cloudflare</a>, and a keyboard
         </p>
-        <p><a href="https://github.com/lemonyte/http-waifus">Open-source</a> and tracker-free</p>
+        <p><a href="https://github.com/lemonyte/http-waifus">Open-source</a> and privacy-respecting</p>
     </footer>
 </div>
