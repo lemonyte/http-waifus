@@ -13,16 +13,16 @@
         "cf-typegen": "wrangler types && move worker-configuration.d.ts src/"
     },
     "devDependencies": {
-        "@cloudflare/workers-types": "^4.20260301.1",
+        "@cloudflare/workers-types": "^4.20260401.1",
         "@sveltejs/adapter-cloudflare": "^7.2.8",
-        "@sveltejs/kit": "^2.53.4",
+        "@sveltejs/kit": "^2.55.0",
         "@sveltejs/vite-plugin-svelte": "^6.2.4",
-        "@tailwindcss/vite": "^4.2.1",
-        "svelte": "^5.53.6",
-        "svelte-check": "^4.4.4",
-        "tailwindcss": "^4.2.1",
+        "@tailwindcss/vite": "^4.2.2",
+        "svelte": "^5.55.1",
+        "svelte-check": "^4.4.6",
+        "tailwindcss": "^4.2.2",
         "typescript": "^5.9.3",
         "vite": "^7.3.1",
-        "wrangler": "^4.69.0"
+        "wrangler": "^4.79.0"
     }
 }
