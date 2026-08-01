@@ -13,7 +13,7 @@
         "cf-typegen": "wrangler types && move worker-configuration.d.ts src/"
     },
     "devDependencies": {
-        "@cloudflare/workers-types": "^4.20260701.1",
+        "@cloudflare/workers-types": "^5.20260729.1",
         "@sveltejs/adapter-cloudflare": "^7.2.9",
         "@sveltejs/kit": "^2.68.0",
         "@sveltejs/vite-plugin-svelte": "^7.1.2",
